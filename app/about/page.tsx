@@ -23,15 +23,16 @@ export default function AboutPage() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <FadeIn>
-            <div className="surface relative aspect-square max-w-md overflow-hidden rounded-2xl bg-gradient-to-br from-teal/18 via-surface to-sky/12">
-              <div className="absolute inset-8 rounded-full border border-teal/20" />
-              <div className="absolute inset-16 rounded-full border border-sky/20" />
+            <div className="surface blossom-photo relative aspect-square max-w-md overflow-hidden rounded-[2rem]">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#fff6f9]/80 via-transparent to-transparent" />
+              <div className="absolute inset-8 rounded-full border border-white/55" />
+              <div className="absolute inset-16 rounded-full border border-white/55" />
               <div className="absolute inset-0 grid place-items-center">
-                <span className="grid size-32 place-items-center rounded-3xl bg-navy/80 text-5xl font-black text-teal shadow-2xl">
+                <span className="grid size-32 place-items-center rounded-full border border-white/70 bg-navy/78 font-display text-5xl font-semibold text-teal shadow-[0_20px_50px_rgba(119,73,98,0.18)] backdrop-blur">
                   S
                 </span>
               </div>
-              <p className="absolute bottom-6 left-6 rounded-full border border-line bg-navy/80 px-4 py-2 text-sm text-muted backdrop-blur">
+              <p className="absolute bottom-6 left-6 rounded-full border border-line bg-navy/88 px-4 py-2 text-sm text-muted shadow-sm backdrop-blur">
                 {siteInfo.location} / Open to opportunities
               </p>
             </div>
@@ -72,7 +73,7 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      <section className="border-y border-line/70 bg-surface/25 py-16 sm:py-20">
+      <section className="border-y border-line/80 bg-[#fff4f8]/55 py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Working principles"
@@ -80,7 +81,7 @@ export default function AboutPage() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {principles.map((principle) => (
-              <article key={principle.title} className="surface rounded-xl p-6">
+              <article key={principle.title} className="surface rounded-[1.4rem] p-6">
                 <h2 className="text-xl font-semibold text-copy">
                   {principle.title}
                 </h2>

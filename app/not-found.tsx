@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal">
           404
         </p>
-        <h1 className="mt-4 text-4xl font-bold text-copy">Page not found</h1>
+        <h1 className="mt-4 text-4xl font-semibold text-copy">Page not found</h1>
         <p className="mt-4 text-muted">
           The page you were looking for is not part of this portfolio.
         </p>

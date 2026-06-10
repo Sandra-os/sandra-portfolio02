@@ -3,7 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { ArrowLeftIcon, ArrowUpRightIcon } from "@/components/ui/icons";
+import {
+  ArrowLeftIcon,
+  ArrowUpRightIcon,
+  BlossomIcon,
+} from "@/components/ui/icons";
 import { Tag } from "@/components/ui/tag";
 import { getProjectBySlug, projects } from "@/data/projects";
 
@@ -41,8 +45,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <>
-      <header className="relative overflow-hidden border-b border-line/70 py-14 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(56,189,248,0.12),transparent_30%)]" />
+      <header className="blossom-photo relative overflow-hidden border-b border-line/80 py-14 sm:py-20">
+        <div className="blossom-wash pointer-events-none absolute inset-0" />
+        <BlossomIcon className="pointer-events-none absolute -right-12 -top-14 size-64 text-teal/8" />
         <Container className="relative">
           <Link
             href="/projects"
@@ -54,7 +59,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <p className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] text-teal">
             {project.eyebrow}
           </p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-copy sm:text-6xl">
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-copy sm:text-6xl">
             {project.title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -91,7 +96,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-            <div className="surface rounded-xl p-6">
+            <div className="surface rounded-[1.4rem] p-6">
               <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
                 Project highlights
               </h2>

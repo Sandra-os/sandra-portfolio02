@@ -106,3 +106,23 @@ export function CodeIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function BlossomIcon(props: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 11.5c-3.2-1.8-4.3-4.5-3.1-6.3 1.3-1.9 3.8-.7 4.7 1.3.2-2.2 2.3-4 4.1-2.8 1.8 1.1 1.1 4.1-1.7 6.3 3.5-.5 5.8 1.2 5.2 3.3-.6 2.1-3.8 2.3-6.4.6 1.4 3.1.6 5.9-1.6 6.1-2.2.2-3.4-2.6-2.5-5.8-2.5 2.1-5.6 2.3-6.4.3-.8-2 1.3-4.1 4.8-4.1"
+      />
+      <circle cx="12.2" cy="11.6" r="1.3" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}

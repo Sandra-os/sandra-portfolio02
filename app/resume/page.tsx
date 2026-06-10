@@ -26,7 +26,7 @@ export default function ResumePage() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
             Resume
           </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-copy">
+          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.02em] text-copy">
             Experience at a glance.
           </h1>
         </div>
@@ -39,10 +39,10 @@ export default function ResumePage() {
         </div>
       </div>
 
-      <article className="surface mx-auto max-w-4xl rounded-2xl p-7 sm:p-11 print:max-w-none print:rounded-none print:border-0 print:p-0">
+      <article className="surface mx-auto max-w-4xl rounded-[1.6rem] p-7 sm:p-11 print:max-w-none print:rounded-none print:border-0 print:p-0">
         <header className="flex flex-col gap-5 border-b border-line pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-copy print:text-slate-900">
+            <h1 className="text-4xl font-semibold tracking-[-0.02em] text-copy print:text-slate-900">
               {siteInfo.name}
             </h1>
             <p className="mt-2 text-lg font-medium text-teal print:text-teal-700">

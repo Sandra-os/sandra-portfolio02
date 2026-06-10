@@ -32,9 +32,9 @@ export default function ExperiencePage() {
               {experiences.map((experience) => (
                 <li
                   key={`${experience.company}-${experience.role}`}
-                  className="relative border-l border-line pl-7 sm:pl-9"
+                  className="relative border-l border-[#e6cbd8] pl-7 sm:pl-9"
                 >
-                  <span className="absolute -left-[5px] top-2 size-2.5 rounded-full bg-teal shadow-[0_0_0_5px_rgba(20,184,166,0.12)]" />
+                  <span className="absolute -left-[6px] top-2 size-3 rounded-full border-2 border-navy bg-teal shadow-[0_0_0_5px_rgba(194,79,124,0.12)]" />
                   <p className="text-sm font-semibold text-teal">
                     {experience.period}
                   </p>
@@ -64,7 +64,7 @@ export default function ExperiencePage() {
           </section>
 
           <aside>
-            <div className="surface rounded-xl p-6">
+            <div className="surface rounded-[1.5rem] p-6">
               <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
                 Education
               </h2>

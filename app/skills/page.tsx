@@ -21,7 +21,7 @@ export default function SkillsPage() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <section key={group.category} className="surface rounded-2xl p-7">
+            <section key={group.category} className="surface rounded-[1.5rem] p-7 transition duration-300 hover:-translate-y-0.5 hover:border-teal/30">
               <h2 className="text-2xl font-semibold text-copy">
                 {group.category}
               </h2>
@@ -35,7 +35,7 @@ export default function SkillsPage() {
           ))}
         </div>
 
-        <section className="mt-10 rounded-2xl border border-teal/25 bg-teal/7 p-7 sm:p-9">
+        <section className="blossom-wash mt-10 rounded-[1.5rem] border border-teal/20 bg-gradient-to-br from-[#fff0f6] via-surface to-[#edf7fc] p-7 shadow-[0_18px_50px_rgba(119,73,98,0.08)] sm:p-9">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
             Currently exploring
           </p>
@@ -50,7 +50,7 @@ export default function SkillsPage() {
             {currentlyExploring.map((item) => (
               <li
                 key={item}
-                className="rounded-lg border border-teal/20 bg-navy/50 px-4 py-2 text-sm font-medium text-copy"
+                className="rounded-full border border-teal/15 bg-surface/80 px-4 py-2 text-sm font-medium text-copy shadow-sm"
               >
                 {item}
               </li>

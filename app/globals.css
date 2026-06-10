@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0f172a;
-  --color-surface: #111827;
-  --color-copy: #f8fafc;
-  --color-muted: #cbd5e1;
-  --color-teal: #14b8a6;
-  --color-sky: #38bdf8;
-  --color-line: #334155;
+  --color-navy: #fff9fb;
+  --color-surface: #ffffff;
+  --color-copy: #342638;
+  --color-muted: #725f70;
+  --color-teal: #bd4675;
+  --color-sky: #4b789b;
+  --color-line: #ead9e2;
+  --font-display: Georgia, "Times New Roman", serif;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -25,13 +26,20 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 15% -10%, rgba(56, 189, 248, 0.08), transparent 28rem),
-    #0f172a;
-  color: #f8fafc;
+    radial-gradient(circle at 10% 5%, rgba(250, 196, 218, 0.38), transparent 24rem),
+    radial-gradient(circle at 90% 12%, rgba(190, 220, 239, 0.35), transparent 30rem),
+    linear-gradient(180deg, #fff9fb 0%, #fffdfd 42%, #fdf8fb 100%);
+  color: #342638;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 a,
@@ -47,25 +55,54 @@ a {
 }
 
 ::selection {
-  background: rgba(20, 184, 166, 0.35);
-  color: #f8fafc;
+  background: rgba(238, 153, 187, 0.45);
+  color: #342638;
 }
 
 .surface {
-  border: 1px solid #334155;
-  background: rgba(17, 24, 39, 0.82);
-  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.2);
+  border: 1px solid rgba(224, 197, 211, 0.88);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 18px 50px rgba(119, 73, 98, 0.09),
+    0 2px 8px rgba(119, 73, 98, 0.04);
+  backdrop-filter: blur(18px);
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid #38bdf8;
+  outline: 2px solid #c24f7c;
   outline-offset: 3px;
 }
 
 .text-gradient {
-  background: linear-gradient(100deg, #14b8a6 8%, #38bdf8 92%);
+  background: linear-gradient(100deg, #ad3f6b 5%, #ce6f98 48%, #5688ad 100%);
   background-clip: text;
   color: transparent;
+}
+
+.blossom-photo {
+  background-image:
+    linear-gradient(90deg, #fff9fb 0%, rgba(255, 249, 251, 0.93) 38%, rgba(255, 249, 251, 0.58) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 249, 251, 0.72)),
+    url("/images/cherry-blossom-sky.jpg");
+  background-position: center, center, 78% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blossom-wash {
+  background:
+    radial-gradient(circle at 82% 25%, rgba(236, 151, 186, 0.24), transparent 18rem),
+    radial-gradient(circle at 70% 70%, rgba(169, 206, 230, 0.25), transparent 22rem);
+}
+
+.petal {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.85rem;
+  border-radius: 70% 35% 70% 35%;
+  background: rgba(214, 104, 149, 0.38);
+  transform: rotate(32deg);
+  animation: drift 8s ease-in-out infinite;
 }
 
 .animate-rise {
@@ -92,6 +129,16 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(32deg);
+  }
+  50% {
+    transform: translate3d(8px, 14px, 0) rotate(48deg);
   }
 }
 

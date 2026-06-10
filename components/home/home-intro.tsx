@@ -4,7 +4,7 @@ import { principles } from "@/data/site";
 
 export function HomeIntro() {
   return (
-    <section className="border-y border-line/70 bg-surface/25 py-20 sm:py-24">
+    <section className="border-y border-line/80 bg-[#fff4f8]/55 py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="How I work"
@@ -16,9 +16,11 @@ export function HomeIntro() {
           {principles.map((principle, index) => (
             <article
               key={principle.title}
-              className="surface rounded-xl p-6 transition hover:-translate-y-1 hover:border-teal/40"
+              className="surface rounded-[1.4rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-teal/35 hover:shadow-[0_22px_55px_rgba(119,73,98,0.13)]"
             >
-              <p className="text-sm font-bold text-teal">0{index + 1}</p>
+              <p className="grid size-9 place-items-center rounded-full bg-teal/9 text-sm font-bold text-teal">
+                0{index + 1}
+              </p>
               <h3 className="mt-5 text-xl font-semibold text-copy">
                 {principle.title}
               </h3>

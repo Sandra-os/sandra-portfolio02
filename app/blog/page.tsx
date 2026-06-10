@@ -18,8 +18,8 @@ export default function BlogPage() {
       />
 
       <Container className="py-16 sm:py-20">
-        <section className="surface mx-auto max-w-3xl rounded-2xl p-8 text-center sm:p-12">
-          <span className="mx-auto grid size-14 place-items-center rounded-xl bg-teal/10 font-mono text-xl font-bold text-teal">
+        <section className="surface blossom-wash mx-auto max-w-3xl rounded-[1.75rem] p-8 text-center sm:p-12">
+          <span className="mx-auto grid size-14 place-items-center rounded-full border border-teal/10 bg-teal/9 font-mono text-xl font-bold text-teal shadow-sm">
             {"</>"}
           </span>
           <h2 className="mt-6 text-2xl font-semibold text-copy">

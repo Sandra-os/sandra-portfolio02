@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const fieldStyles =
-  "focus-ring mt-2 w-full rounded-lg border border-line bg-navy/70 px-4 py-3 text-copy placeholder:text-muted/60";
+  "focus-ring mt-2 w-full rounded-xl border border-line bg-surface/80 px-4 py-3 text-copy shadow-inner shadow-[#b77a9710] placeholder:text-muted/55 transition hover:border-teal/30";
 
 export default function ContactPage() {
   return (
@@ -25,7 +25,7 @@ export default function ContactPage() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
           <aside className="space-y-6">
-            <div className="surface rounded-xl p-6">
+            <div className="surface rounded-[1.4rem] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal">
                 Email
               </p>
@@ -46,7 +46,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="surface rounded-xl p-6">
+            <div className="surface rounded-[1.4rem] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal">
                 Elsewhere
               </p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="focus-ring flex items-center justify-between rounded-lg border border-line px-4 py-3 text-sm font-medium text-muted transition hover:border-teal/50 hover:text-copy"
+                    className="focus-ring flex items-center justify-between rounded-xl border border-line bg-[#fff9fb]/70 px-4 py-3 text-sm font-medium text-muted transition hover:border-teal/40 hover:bg-[#fff2f7] hover:text-copy"
                   >
                     {label}
                     <ArrowUpRightIcon className="size-4 text-teal" />
@@ -74,7 +74,7 @@ export default function ContactPage() {
             action={`mailto:${siteInfo.email}`}
             method="post"
             encType="text/plain"
-            className="surface rounded-2xl p-6 sm:p-8"
+            className="surface rounded-[1.6rem] p-6 sm:p-8"
           >
             <h2 className="text-2xl font-semibold text-copy">Send a message</h2>
             <p className="mt-3 leading-7 text-muted">
@@ -129,7 +129,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-teal/90 sm:w-auto"
+              className="focus-ring mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-navy shadow-[0_12px_30px_rgba(194,79,124,0.22)] transition hover:bg-[#ad3f6b] sm:w-auto"
             >
               Send with email app
               <ArrowUpRightIcon className="size-4" />

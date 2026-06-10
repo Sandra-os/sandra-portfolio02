@@ -21,9 +21,9 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const styles = {
     primary:
-      "bg-teal text-navy shadow-[0_10px_30px_rgba(20,184,166,0.2)] hover:bg-teal/90",
+      "bg-teal text-navy shadow-[0_12px_30px_rgba(194,79,124,0.22)] hover:bg-[#ad3f6b] hover:shadow-[0_14px_34px_rgba(194,79,124,0.28)]",
     secondary:
-      "border border-line bg-surface/70 text-copy hover:border-teal/60 hover:bg-line/30",
+      "border border-line bg-surface/80 text-copy shadow-sm hover:border-teal/45 hover:bg-[#fff2f7]",
     text: "text-teal hover:text-sky",
   };
 
@@ -31,7 +31,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={cn(
-        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition",
+        "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-300",
         styles[variant],
         className,
       )}

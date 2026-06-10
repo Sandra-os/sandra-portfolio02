@@ -23,7 +23,7 @@ export function MobileNavigation() {
     <div className="md:hidden">
       <button
         type="button"
-        className="focus-ring inline-flex size-11 items-center justify-center rounded-lg border border-line bg-surface text-copy"
+        className="focus-ring inline-flex size-11 items-center justify-center rounded-full border border-line bg-surface/90 text-copy shadow-sm"
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
@@ -39,7 +39,7 @@ export function MobileNavigation() {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="fixed inset-x-0 top-[73px] z-50 h-[calc(100dvh-73px)] border-t border-line bg-navy/98 px-5 py-7 backdrop-blur-xl"
+          className="fixed inset-x-0 top-[75px] z-50 h-[calc(100dvh-75px)] border-t border-line bg-navy/98 px-5 py-7 backdrop-blur-xl"
         >
           <nav aria-label="Mobile navigation">
             <ul className="space-y-1">
@@ -56,7 +56,7 @@ export function MobileNavigation() {
                       aria-current={isActive ? "page" : undefined}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "focus-ring block rounded-lg px-4 py-3 text-base font-medium transition",
+                        "focus-ring block rounded-2xl px-4 py-3 text-base font-medium transition",
                         isActive
                           ? "bg-teal/10 text-teal"
                           : "text-muted hover:bg-surface hover:text-copy",

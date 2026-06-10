@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="antialiased">
         <a
           href="#main-content"
-          className="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-teal px-4 py-2 font-semibold text-navy transition focus:translate-y-0"
+          className="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-teal px-4 py-2 font-semibold text-navy shadow-lg transition focus:translate-y-0"
         >
           Skip to content
         </a>
