@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f172a;
+  --color-surface: #111827;
+  --color-copy: #f8fafc;
+  --color-muted: #cbd5e1;
+  --color-teal: #14b8a6;
+  --color-sky: #38bdf8;
+  --color-line: #334155;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% -10%, rgba(56, 189, 248, 0.08), transparent 28rem),
+    #0f172a;
+  color: #f8fafc;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.35);
+  color: #f8fafc;
+}
+
+.surface {
+  border: 1px solid #334155;
+  background: rgba(17, 24, 39, 0.82);
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.2);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #14b8a6 8%, #38bdf8 92%);
+  background-clip: text;
+  color: transparent;
+}
+
+.animate-rise {
+  animation: rise 650ms ease-out both;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 300ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: #111827;
+  }
+
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .surface {
+    border-color: #cbd5e1;
+    background: white;
+    box-shadow: none;
+  }
+}
