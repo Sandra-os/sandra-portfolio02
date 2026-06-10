@@ -9,7 +9,7 @@ export type Project = {
   outcome: string;
   technologies: string[];
   highlights: string[];
-  githubUrl: string;
+  githubUrl?: string;
   featured: boolean;
   accent: "teal" | "blue" | "mixed";
 };
@@ -35,7 +35,6 @@ export const projects: Project[] = [
       "Coordinated real-time sensor measurements and printer signals",
       "Delivered as a year-long computer engineering senior design project",
     ],
-    githubUrl: "https://github.com/yourusername/real-time-product-marking",
     featured: true,
     accent: "teal",
   },
@@ -59,7 +58,6 @@ export const projects: Project[] = [
       "Built verification testbenches for timing behavior",
       "Implemented long-distance send and receive communication",
     ],
-    githubUrl: "https://github.com/yourusername/uart-design",
     featured: true,
     accent: "blue",
   },
@@ -83,7 +81,6 @@ export const projects: Project[] = [
       "Authored the complete VHDL design and simulation testbench",
       "Implemented single-cycle and pipelined processor approaches",
     ],
-    githubUrl: "https://github.com/yourusername/32-bit-processor",
     featured: true,
     accent: "mixed",
   },

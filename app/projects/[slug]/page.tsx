@@ -108,16 +108,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <ButtonLink
-                href={project.githubUrl}
-                external
-                variant="primary"
-              >
-                View project repository
-                <ArrowUpRightIcon className="size-4" />
-              </ButtonLink>
-            </div>
+            {project.githubUrl ? (
+              <div className="flex flex-col gap-3">
+                <ButtonLink
+                  href={project.githubUrl}
+                  external
+                  variant="primary"
+                >
+                  View project repository
+                  <ArrowUpRightIcon className="size-4" />
+                </ButtonLink>
+              </div>
+            ) : null}
           </aside>
         </div>
       </Container>

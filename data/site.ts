@@ -8,8 +8,8 @@ export const siteInfo = {
   summary:
     "Computer engineer and software developer with 4+ years of experience building scalable applications with Python, Flask, Django, React, and modern cloud tooling.",
   availability: "Open to software engineering opportunities",
-  github: "https://github.com/yourusername",
-  linkedin: "https://www.linkedin.com/in/yourusername",
+  github: "https://github.com/Sandra-os",
+  linkedin: "https://www.linkedin.com/in/sandraogbudinkpa2/",
   resumePath: "/resume/sandra-ogbudinkpa-resume-2026.pdf",
 } as const;
 
