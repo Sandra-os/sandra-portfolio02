@@ -4,6 +4,8 @@ A responsive, multi-page software engineering portfolio built with the Next.js
 App Router. The site presents my professional experience, technical skills,
 computer engineering projects, education, certifications, and resume.
 
+**Live site:** [sandra-ogbudinkpa.vercel.app](https://sandra-ogbudinkpa.vercel.app)
+
 ## Tech Stack
 
 - Next.js 16 with App Router

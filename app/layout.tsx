@@ -6,6 +6,7 @@ import { siteInfo } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteInfo.url),
   title: {
     default: `${siteInfo.name} | ${siteInfo.role}`,
     template: `%s | ${siteInfo.name}`,
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteInfo.name} | ${siteInfo.role}`,
     description: siteInfo.summary,
+    url: siteInfo.url,
     type: "website",
   },
 };

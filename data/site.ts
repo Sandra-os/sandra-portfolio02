@@ -5,6 +5,7 @@ export const siteInfo = {
   location: "Charlotte, North Carolina",
   email: "sandra.os325@gmail.com",
   phone: "862-704-9706",
+  url: "https://sandra-ogbudinkpa.vercel.app",
   summary:
     "Computer engineer and software developer with 4+ years of experience building scalable applications with Python, Flask, Django, React, and modern cloud tooling.",
   availability: "Open to software engineering opportunities",
