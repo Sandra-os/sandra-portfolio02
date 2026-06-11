@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { ArrowUpRightIcon } from "@/components/ui/icons";
 import { PageHeader } from "@/components/ui/page-header";
+import { Tag } from "@/components/ui/tag";
+import { blogPosts } from "@/data/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Notes on software engineering, product thinking, and learning.",
+  description:
+    "Sandra Ogbudinkpa's writing on software engineering, learning, balance, and building a thoughtful career in technology.",
 };
 
 export default function BlogPage() {
@@ -13,26 +19,101 @@ export default function BlogPage() {
     <>
       <PageHeader
         eyebrow="Blog"
-        title="Notes from the workbench."
-        description="A future home for practical writing about software engineering, building products, and lessons learned along the way."
+        title="Thoughts from the learning journey."
+        description="Reflections on software engineering, continuous learning, and the human side of building a career in technology."
       />
 
       <Container className="py-16 sm:py-20">
-        <section className="surface blossom-wash mx-auto max-w-3xl rounded-[1.75rem] p-8 text-center sm:p-12">
-          <span className="mx-auto grid size-14 place-items-center rounded-full border border-teal/10 bg-teal/9 font-mono text-xl font-bold text-teal shadow-sm">
-            {"</>"}
-          </span>
-          <h2 className="mt-6 text-2xl font-semibold text-copy">
-            First posts are in progress.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl leading-7 text-muted">
-            I&apos;ll be sharing clear, useful notes on frontend architecture,
-            accessibility, engineering habits, and the process behind my
-            projects.
-          </p>
-          <ButtonLink href="/contact" variant="secondary" className="mt-7">
-            Connect in the meantime
-          </ButtonLink>
+        <section aria-labelledby="published-articles">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
+              Published writing
+            </p>
+            <h2
+              id="published-articles"
+              className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-copy sm:text-4xl"
+            >
+              Lessons worth sharing.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-muted">
+              Notes from my experience learning, problem-solving, and growing
+              as an engineer.
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-7">
+            {blogPosts.map((post) => (
+              <article
+                key={post.url}
+                className="surface group overflow-hidden rounded-[1.75rem] transition duration-300 hover:-translate-y-1 hover:border-teal/30 hover:shadow-[0_24px_60px_rgba(119,73,98,0.14)]"
+              >
+                <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+                  <Link
+                    href={post.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="focus-ring relative block min-h-64 overflow-hidden bg-[#f3d5e2]"
+                    aria-label={`Read ${post.title} on ${post.source}`}
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt}
+                      fill
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-copy/18 via-transparent to-transparent" />
+                  </Link>
+
+                  <div className="flex flex-col p-7 sm:p-9">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
+                      <span className="font-semibold text-teal">
+                        {post.source}
+                      </span>
+                      <span aria-hidden="true">/</span>
+                      <time dateTime={post.publishedAt}>
+                        {post.publishedLabel}
+                      </time>
+                      <span aria-hidden="true">/</span>
+                      <span>{post.readingTime}</span>
+                    </div>
+
+                    <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-copy">
+                      <Link
+                        href={post.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="focus-ring rounded-sm transition group-hover:text-teal"
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-3 font-medium leading-7 text-copy">
+                      {post.description}
+                    </p>
+                    <p className="mt-4 flex-1 leading-7 text-muted">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </div>
+
+                    <ButtonLink
+                      href={post.url}
+                      external
+                      className="mt-8 w-fit"
+                    >
+                      Read the article
+                      <ArrowUpRightIcon className="size-4" />
+                    </ButtonLink>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       </Container>
     </>
