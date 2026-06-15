@@ -115,10 +115,16 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
             {project.githubUrl ? (
               <div className="flex flex-col gap-3">
+                {project.liveUrl ? (
+                  <ButtonLink href={project.liveUrl} external variant="primary">
+                    Open live demo
+                    <ArrowUpRightIcon className="size-4" />
+                  </ButtonLink>
+                ) : null}
                 <ButtonLink
                   href={project.githubUrl}
                   external
-                  variant="primary"
+                  variant={project.liveUrl ? "secondary" : "primary"}
                 >
                   View project repository
                   <ArrowUpRightIcon className="size-4" />

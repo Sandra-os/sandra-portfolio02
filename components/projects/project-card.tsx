@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/data/projects";
-import { ArrowRightIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/icons";
 import { Tag } from "@/components/ui/tag";
 import { cn } from "@/lib/utils";
 
@@ -50,13 +50,26 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <Link
-          href={`/projects/${project.slug}`}
-          className="focus-ring mt-7 inline-flex w-fit items-center gap-2 rounded text-sm font-semibold text-teal transition hover:text-sky"
-        >
-          View case study
-          <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-        </Link>
+        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="focus-ring inline-flex w-fit items-center gap-2 rounded text-sm font-semibold text-teal transition hover:text-sky"
+          >
+            View case study
+            <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
+          </Link>
+          {project.githubUrl ? (
+            <Link
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring inline-flex w-fit items-center gap-1.5 rounded text-sm font-semibold text-muted transition hover:text-teal"
+            >
+              GitHub
+              <ArrowUpRightIcon className="size-4" />
+            </Link>
+          ) : null}
+        </div>
       </div>
     </article>
   );

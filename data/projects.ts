@@ -10,11 +10,68 @@ export type Project = {
   technologies: string[];
   highlights: string[];
   githubUrl?: string;
+  liveUrl?: string;
   featured: boolean;
   accent: "teal" | "blue" | "mixed";
 };
 
 export const projects: Project[] = [
+  {
+    slug: "bloomfit-fitness-tracker",
+    title: "BloomFit Fitness Tracker",
+    eyebrow: "React / Fitness dashboard",
+    summary:
+      "A polished React fitness dashboard for logging workouts, reviewing weekly performance, and visualizing progress over time.",
+    description:
+      "BloomFit is a portfolio-ready frontend application that helps users log workouts, track exercises, review weekly summaries, and understand progress with visual charts.",
+    challenge:
+      "Fitness tracking needs to feel quick and encouraging while still handling structured workout data, search, filters, summaries, and progress visualization.",
+    solution:
+      "I built a responsive React and Vite application with reusable components, localStorage persistence, Recharts visualizations, filtering, search, demo data, and utility tests with Vitest and Testing Library.",
+    outcome:
+      "The finished app gives users a friendly fitness dashboard with workout history, weekly stats, personal-best highlights, and a GitHub Pages deployment for live review.",
+    technologies: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Recharts",
+      "Vitest",
+      "GitHub Pages",
+    ],
+    highlights: [
+      "Logs workouts with exercises, sets, reps, weight, cardio minutes, and notes",
+      "Persists workout history with localStorage and supports search/filter workflows",
+      "Includes charts, weekly summaries, personal-best highlights, and responsive layouts",
+    ],
+    githubUrl: "https://github.com/Sandra-os/fitness-tracker-app",
+    liveUrl: "https://sandra-os.github.io/fitness-tracker-app/",
+    featured: true,
+    accent: "teal",
+  },
+  {
+    slug: "task-manager-app",
+    title: "Task Manager App",
+    eyebrow: "React / Productivity app",
+    summary:
+      "A responsive React task management app for capturing tasks, organizing priorities, tracking due dates, and saving progress locally.",
+    description:
+      "The Task Manager App is a clean frontend project designed to help users manage everyday work with priorities, due dates, completion states, filtering, search, and local persistence.",
+    challenge:
+      "A task tool needs to stay simple enough for fast capture while still supporting the organization features people expect when their task list grows.",
+    solution:
+      "I built the app with React, Vite, reusable components, utility functions, localStorage persistence, priority and status filters, search, and clear loading, empty, and error states.",
+    outcome:
+      "The result is a portfolio-ready productivity application with a responsive interface and a maintainable frontend structure that can grow into categories, recurring tasks, or cloud sync.",
+    technologies: ["React", "Vite", "JavaScript", "CSS", "localStorage"],
+    highlights: [
+      "Supports adding, editing, deleting, completing, searching, and filtering tasks",
+      "Tracks due dates, overdue states, and high, medium, and low priorities",
+      "Uses localStorage and responsive layouts for a smooth single-page app experience",
+    ],
+    githubUrl: "https://github.com/Sandra-os/task-manager-app",
+    featured: true,
+    accent: "mixed",
+  },
   {
     slug: "real-time-product-marking",
     title: "Real-time Product Marking",
