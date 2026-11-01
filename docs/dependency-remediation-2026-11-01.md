@@ -86,3 +86,9 @@ Underlying advisories:
 - [Next.js: Remote Code Execution in next/og ImageResponse](https://github.com/advisories/GHSA-vcvr-r3jv-pc5j)
 - [baseline-browser-mapping process termination on invalid input causes denial of service](https://github.com/advisories/GHSA-w5vr-8v7q-w6rv)
 - [sharp : Vulnerability in librsvg dependency CVE-2026-96889](https://github.com/advisories/GHSA-wq5f-xc86-pv6w)
+
+## Residual applicability review
+
+The remaining resolved minimatch is 3.1.5. Its source exports the callable CommonJS API and contains neither `firstPhasePreProcess` nor `optimizationLevel`, the implementation/condition described by the reviewed amplification advisory. That limits the demonstrated applicability of this particular finding to the legacy path; it is an inference from source inspection, not an upstream exemption or a reproduced exploit. The registry range still includes it, so the full audit remains nonzero. Patterns come from development lint configuration rather than application visitors. Keep this visible pending upstream range clarification or compatible plugin migration.
+
+Remaining affected-package entries (including dependency cascades): `@eslint-community/eslint-utils`, `@eslint/config-array`, `@eslint/eslintrc`, `@next/eslint-plugin-next`, `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`, `@typescript-eslint/type-utils`, `@typescript-eslint/utils`, `eslint`, `eslint-config-next`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `minimatch`, `typescript-eslint`.
