@@ -9,6 +9,7 @@ import {
 import { experiences } from "@/data/experience";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/experience" },
   title: "Experience",
   description: "Sandra's software engineering experience and education.",
 };

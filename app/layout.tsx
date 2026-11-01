@@ -11,10 +11,16 @@ export const metadata: Metadata = {
     default: `${siteInfo.name} | ${siteInfo.role}`,
     template: `%s | ${siteInfo.name}`,
   },
-  description: siteInfo.summary,
+  description: siteInfo.projectSummary,
+  alternates: { canonical: "/" },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteInfo.name} | ${siteInfo.role}`,
+    description: siteInfo.projectSummary,
+  },
   openGraph: {
     title: `${siteInfo.name} | ${siteInfo.role}`,
-    description: siteInfo.summary,
+    description: siteInfo.projectSummary,
     url: siteInfo.url,
     type: "website",
   },
@@ -24,6 +30,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: siteInfo.name,
+              url: siteInfo.url,
+              sameAs: [siteInfo.github, siteInfo.linkedin],
+            }).replaceAll("<", "\\u003c"),
+          }}
+        />
         <a
           href="#main-content"
           className="focus-ring fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-teal px-4 py-2 font-semibold text-navy shadow-lg transition focus:translate-y-0"
@@ -32,7 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" tabIndex={-1} className="flex-1">
             {children}
           </main>
           <Footer />

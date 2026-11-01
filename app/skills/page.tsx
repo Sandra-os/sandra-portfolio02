@@ -5,6 +5,7 @@ import { Tag } from "@/components/ui/tag";
 import { currentlyExploring, skillGroups } from "@/data/skills";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/skills" },
   title: "Skills",
   description: "Technical skills and engineering strengths.",
 };
@@ -21,7 +22,10 @@ export default function SkillsPage() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <section key={group.category} className="surface rounded-[1.5rem] p-7 transition duration-300 hover:-translate-y-0.5 hover:border-teal/30">
+            <section
+              key={group.category}
+              className="surface rounded-[1.5rem] p-7 transition duration-300 hover:-translate-y-0.5 hover:border-teal/30"
+            >
               <h2 className="text-2xl font-semibold text-copy">
                 {group.category}
               </h2>

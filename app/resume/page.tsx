@@ -14,6 +14,7 @@ import { skillGroups } from "@/data/skills";
 import { siteInfo } from "@/data/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/resume" },
   title: "Resume",
   description: `Resume for ${siteInfo.name}, ${siteInfo.role}.`,
 };
@@ -26,9 +27,9 @@ export default function ResumePage() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
             Resume
           </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.02em] text-copy">
+          <p className="mt-3 font-display text-4xl font-semibold tracking-[-0.02em] text-copy">
             Experience at a glance.
-          </h1>
+          </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={siteInfo.resumePath} download>

@@ -22,13 +22,38 @@ export function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-          <Link className="focus-ring rounded text-muted transition hover:text-teal" href={siteInfo.github} target="_blank" rel="noreferrer">
+          <Link
+            className="focus-ring rounded text-muted transition hover:text-teal"
+            href="/experience"
+          >
+            Experience
+          </Link>
+          <Link
+            className="focus-ring rounded text-muted transition hover:text-teal"
+            href="/skills"
+          >
+            Skills
+          </Link>
+          <Link
+            className="focus-ring rounded text-muted transition hover:text-teal"
+            href={siteInfo.github}
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub
           </Link>
-          <Link className="focus-ring rounded text-muted transition hover:text-teal" href={siteInfo.linkedin} target="_blank" rel="noreferrer">
+          <Link
+            className="focus-ring rounded text-muted transition hover:text-teal"
+            href={siteInfo.linkedin}
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn
           </Link>
-          <Link className="focus-ring rounded text-muted transition hover:text-teal" href={`mailto:${siteInfo.email}`}>
+          <Link
+            className="focus-ring rounded text-muted transition hover:text-teal"
+            href={`mailto:${siteInfo.email}`}
+          >
             Email
           </Link>
         </div>

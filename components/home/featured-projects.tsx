@@ -1,36 +1,32 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { ButtonLink } from "@/components/ui/button-link";
-import { ArrowRightIcon } from "@/components/ui/icons";
 import { ProjectCard } from "@/components/projects/project-card";
 import { projects } from "@/data/projects";
 
 export function FeaturedProjects() {
-  const featuredProjects = projects.filter((project) => project.featured);
-
   return (
-    <section className="py-20 sm:py-24">
+    <section
+      id="selected-work"
+      className="scroll-mt-28 border-y border-line py-14 sm:py-20"
+    >
       <Container>
-        <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
-            eyebrow="Selected work"
-            title="Projects shaped around real problems."
-            description="A few examples of how I think about product goals, implementation details, and the people using the result."
-          />
-          <ButtonLink
-            href="/projects"
-            variant="text"
-            className="shrink-0 justify-start px-0"
-          >
-            View all projects
-            <ArrowRightIcon className="size-4" />
-          </ButtonLink>
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl sm:text-4xl">Selected work</h2>
+            <p className="mt-3 max-w-2xl leading-7 text-muted">
+              Two products. Different constraints. Decisions you can inspect.
+            </p>
+          </div>
+          <Link className="text-link" href="/projects">
+            All work & foundations →
+          </Link>
         </div>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
+        <div className="divide-y divide-line">
+          {projects
+            .filter((project) => project.featured)
+            .map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
         </div>
       </Container>
     </section>

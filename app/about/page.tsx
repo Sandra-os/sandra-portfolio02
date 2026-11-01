@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { principles, siteInfo } from "@/data/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description: `Learn more about ${siteInfo.name}'s approach to software engineering.`,
 };
@@ -81,7 +82,10 @@ export default function AboutPage() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {principles.map((principle) => (
-              <article key={principle.title} className="surface rounded-[1.4rem] p-6">
+              <article
+                key={principle.title}
+                className="surface rounded-[1.4rem] p-6"
+              >
                 <h2 className="text-xl font-semibold text-copy">
                   {principle.title}
                 </h2>

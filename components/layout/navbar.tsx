@@ -30,10 +30,7 @@ export function Navbar() {
         <nav className="hidden md:block" aria-label="Primary navigation">
           <ul className="flex items-center gap-1">
             {navigation.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+              const isActive = pathname.startsWith(item.href);
 
               return (
                 <li key={item.href}>
