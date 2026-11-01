@@ -1,76 +1,109 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
-import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/ui/icons";
-import { Tag } from "@/components/ui/tag";
-import { cn } from "@/lib/utils";
 
 export function ProjectCard({ project }: { project: Project }) {
-  const accents = {
-    teal: "from-[#f4bfd3]/70 via-[#fff0f6] to-[#eef7fc]",
-    blue: "from-[#c7e1f1]/75 via-[#f8f4fb] to-[#fff0f6]",
-    mixed: "from-[#f4c7db]/65 via-[#f7f2fb] to-[#cce5f2]/65",
-  };
-
-  return (
-    <article className="surface group flex h-full flex-col overflow-hidden rounded-[1.6rem] transition duration-300 hover:-translate-y-1 hover:border-teal/35 hover:shadow-[0_24px_60px_rgba(119,73,98,0.14)]">
-      <div
-        className={cn(
-          "relative flex min-h-48 items-end overflow-hidden border-b border-line bg-gradient-to-br p-6",
-          accents[project.accent],
-        )}
-      >
-        <div className="absolute -right-8 -top-12 size-48 rounded-full border border-white/50" />
-        <div className="absolute -right-1 top-0 size-32 rounded-full border border-white/60" />
-        <span className="petal right-14 top-8 [animation-delay:1s]" />
-        <span className="petal right-24 top-16 scale-75 [animation-delay:2.6s]" />
-        <div className="relative">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-            {project.eyebrow}
-          </p>
-          <p className="mt-2 font-mono text-sm text-muted">
-            /projects/{project.slug}
-          </p>
+  if (!project.featured) {
+    return (
+      <article className="grid gap-3 border-t border-line py-6 sm:grid-cols-[1fr_2fr] sm:gap-10">
+        <div>
+          <h3 className="text-xl">
+            <Link
+              className="text-link text-copy"
+              href={`/projects/${project.slug}`}
+            >
+              {project.title}
+            </Link>
+          </h3>
+          <p className="mt-2 text-sm text-muted">{project.eyebrow}</p>
         </div>
-      </div>
-
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <h2 className="text-2xl font-semibold tracking-tight text-copy">
+        <div>
+          <p className="leading-7 text-muted">{project.summary}</p>
           <Link
+            className="text-link mt-3 inline-block"
             href={`/projects/${project.slug}`}
-            className="focus-ring rounded-sm transition group-hover:text-teal"
+          >
+            Project details →
+          </Link>
+        </div>
+      </article>
+    );
+  }
+  return (
+    <article className="grid items-center gap-8 py-10 first:pt-0 last:pb-0 md:grid-cols-2 md:gap-14">
+      <div className="order-2 md:order-1">
+        <p className="text-sm font-semibold text-teal">{project.status}</p>
+        <h3 className="mt-3 text-3xl sm:text-4xl">
+          <Link
+            className="focus-ring rounded"
+            href={`/projects/${project.slug}`}
           >
             {project.title}
           </Link>
-        </h2>
-        <p className="mt-4 flex-1 leading-7 text-muted">{project.summary}</p>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.technologies.slice(0, 3).map((technology) => (
-            <Tag key={technology}>{technology}</Tag>
-          ))}
-        </div>
-
-        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <Link
-            href={`/projects/${project.slug}`}
-            className="focus-ring inline-flex w-fit items-center gap-2 rounded text-sm font-semibold text-teal transition hover:text-sky"
-          >
-            View case study
-            <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
+        </h3>
+        <p className="mt-4 max-w-xl text-lg leading-8 text-muted">
+          {project.summary}
+        </p>
+        <p className="mt-5 text-sm leading-6 text-muted">
+          {project.technologies.slice(0, 4).join(" / ")}
+        </p>
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Link className="text-link" href={`/projects/${project.slug}`}>
+            Read {project.title} case study →
           </Link>
-          {project.githubUrl ? (
-            <Link
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="focus-ring inline-flex w-fit items-center gap-1.5 rounded text-sm font-semibold text-muted transition hover:text-teal"
-            >
-              GitHub
-              <ArrowUpRightIcon className="size-4" />
-            </Link>
+          {project.liveUrl ? (
+            <a className="text-link" href={project.liveUrl}>
+              Play Petal Relay ↗
+            </a>
           ) : null}
+          <span className="text-sm text-muted">Source private</span>
         </div>
       </div>
+      {project.slug === "petal-relay" ? (
+        <Link
+          href="/projects/petal-relay"
+          className="focus-ring order-1 block overflow-hidden rounded-2xl border border-line bg-[#f7f9f6] md:order-2"
+          aria-label="Petal Relay case study: public beta game capture"
+        >
+          <Image
+            src="/images/petal-relay-beta.png"
+            alt="Petal Relay public beta: a flower puzzle board with semantic controls, Undo and checked hints."
+            width={1200}
+            height={900}
+            sizes="(min-width: 768px) 46vw, 100vw"
+            className="h-auto w-full"
+          />
+        </Link>
+      ) : (
+        <div className="order-1 rounded-2xl border border-line bg-[#f2f5f7] px-7 py-9 md:order-2 sm:px-10">
+          <p className="text-sm font-medium text-muted">
+            Architecture at a glance
+          </p>
+          <ol
+            className="mt-6 space-y-0"
+            aria-label="KinOS request and data flow"
+          >
+            {[
+              ["Web + mobile", "Typed clients and shared domain logic"],
+              ["Authorized API", "Household membership and role checks"],
+              ["PostgreSQL", "Persistent plans, tasks and events"],
+            ].map(([title, detail], i) => (
+              <li key={title} className="border-t border-copy/15 py-4">
+                <p className="flex items-baseline gap-4 text-lg font-semibold">
+                  <span className="font-mono text-xs text-muted">0{i + 1}</span>
+                  {title}
+                </p>
+                <p className="mt-1 pl-8 text-sm leading-6 text-muted">
+                  {detail}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 text-xs leading-5 text-muted">
+            Conceptual architecture · synthetic-data beta
+          </p>
+        </div>
+      )}
     </article>
   );
 }

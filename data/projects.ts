@@ -1,3 +1,5 @@
+import { selectedWork } from "./selected-work";
+
 export type Project = {
   slug: string;
   title: string;
@@ -13,9 +15,14 @@ export type Project = {
   liveUrl?: string;
   featured: boolean;
   accent: "teal" | "blue" | "mixed";
+  status?: string;
+  sourcePrivate?: boolean;
+  role?: string;
+  sections?: { title: string; paragraphs: string[]; points?: string[] }[];
 };
 
 export const projects: Project[] = [
+  ...selectedWork,
   {
     slug: "bloomfit-fitness-tracker",
     title: "BloomFit Fitness Tracker",
@@ -45,7 +52,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Sandra-os/fitness-tracker-app",
     liveUrl: "https://sandra-os.github.io/fitness-tracker-app/",
-    featured: true,
+    featured: false,
     accent: "teal",
   },
   {
@@ -69,7 +76,7 @@ export const projects: Project[] = [
       "Uses localStorage and responsive layouts for a smooth single-page app experience",
     ],
     githubUrl: "https://github.com/Sandra-os/task-manager-app",
-    featured: true,
+    featured: false,
     accent: "mixed",
   },
   {
@@ -92,7 +99,7 @@ export const projects: Project[] = [
       "Coordinated real-time sensor measurements and printer signals",
       "Delivered as a year-long computer engineering senior design project",
     ],
-    featured: true,
+    featured: false,
     accent: "teal",
   },
   {
@@ -115,7 +122,7 @@ export const projects: Project[] = [
       "Built verification testbenches for timing behavior",
       "Implemented long-distance send and receive communication",
     ],
-    featured: true,
+    featured: false,
     accent: "blue",
   },
   {
@@ -138,7 +145,7 @@ export const projects: Project[] = [
       "Authored the complete VHDL design and simulation testbench",
       "Implemented single-cycle and pipelined processor approaches",
     ],
-    featured: true,
+    featured: false,
     accent: "mixed",
   },
 ];

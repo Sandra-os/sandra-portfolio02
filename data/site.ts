@@ -12,16 +12,17 @@ export const siteInfo = {
   github: "https://github.com/Sandra-os",
   linkedin: "https://www.linkedin.com/in/sandraogbudinkpa2/",
   resumePath: "/resume/sandra-ogbudinkpa-resume-2026.pdf",
+  headline:
+    "Software engineer building reliable full-stack products and thoughtful interactive experiences.",
+  projectSummary:
+    "Selected engineering work by Sandra Ogbudinkpa: a deterministic browser puzzle game and a private, synthetic-data family coordination beta.",
 } as const;
 
 export const navigation = [
-  { label: "Home", href: "/" },
+  { label: "Work", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Skills", href: "/skills" },
   { label: "Resume", href: "/resume" },
-  { label: "Blog", href: "/blog" },
+  { label: "Writing", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

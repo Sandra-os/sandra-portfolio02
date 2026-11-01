@@ -9,6 +9,7 @@ import { Tag } from "@/components/ui/tag";
 import { blogPosts } from "@/data/blog";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Blog",
   description:
     "Sandra Ogbudinkpa's writing on software engineering, learning, balance, and building a thoughtful career in technology.",
@@ -36,8 +37,8 @@ export default function BlogPage() {
               Lessons worth sharing.
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted">
-              Notes from my experience learning, problem-solving, and growing
-              as an engineer.
+              Notes from my experience learning, problem-solving, and growing as
+              an engineer.
             </p>
           </div>
 
@@ -101,11 +102,7 @@ export default function BlogPage() {
                       ))}
                     </div>
 
-                    <ButtonLink
-                      href={post.url}
-                      external
-                      className="mt-8 w-fit"
-                    >
+                    <ButtonLink href={post.url} external className="mt-8 w-fit">
                       Read the article
                       <ArrowUpRightIcon className="size-4" />
                     </ButtonLink>
